@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolygonClient
   module Websocket
     module Connection
@@ -47,9 +49,7 @@ module PolygonClient
             @driver.text(msg) if msg
           end
 
-          if status_events.length.zero?
-            @on_message.call(events)
-          end
+          @on_message.call(events) if status_events.length.zero?
         end
 
         @driver.on(:close) { |event| finalize(event) }
@@ -119,7 +119,7 @@ module PolygonClient
     end
 
     class Client
-      BASE_URL = "wss://socket.polygon.io/".freeze
+      BASE_URL = "wss://socket.polygon.io/"
 
       def initialize(path, api_key, opts = {})
         path = Types::Coercible::String.enum("stocks", "forex", "crypto")[path]
@@ -131,9 +131,9 @@ module PolygonClient
       end
 
       def subscribe(channels, &block)
-        EM.run {
+        EM.run do
           Connection.connect(@api_key, @url, channels, @opts, &block)
-        }
+        end
       end
     end
   end

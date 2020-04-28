@@ -17,7 +17,7 @@ module PolygonClient
     CLIENT_ERROR_STATUSES = (400...500).freeze
     SERVER_ERROR_STATUSES = (500...600).freeze
 
-    def on_complete(response_env) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    def on_complete(response_env) # rubocop:disable Metrics/MethodLength
       error = into_error(response_env)
 
       status = error&.code

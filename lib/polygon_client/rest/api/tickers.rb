@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolygonClient
   module Rest
     class Tickers < PolygonRestHandler

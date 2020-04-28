@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 module PolygonClient
   module Websocket
     class WebsocketEvent < Dry::Struct
       Statuses = Types::String.enum("connected", "successful", "auth_timeout", "auth_success", "success")
-  
+
       attribute :ev, Types::String
       attribute :status, Statuses
       attribute :message, Types::String
     end
-  
+
     class ForexQuoteEvent < Dry::Struct
       attribute :ev, Types::String.enum("C")
       attribute :p, Types::String            # Currency pair
@@ -16,7 +18,7 @@ module PolygonClient
       attribute :b, Types::JSON::Decimal     # Bid Price
       attribute :t, Types::Integer           # Quote Timestamp ( Unix MS )
     end
-  
+
     class ForexAggregateEvent < Dry::Struct
       attribute :ev, Types::String.enum("CA")
       attribute :pair, Types::String
@@ -27,7 +29,7 @@ module PolygonClient
       attribute :v, Types::Integer           # Volume ( Quotes during this duration )
       attribute :s, Types::Integer           # Tick Start Timestamp
     end
-  
+
     class CryptoQuoteEvent < Dry::Struct
       attribute :ev, Types::String.enum("XQ")
       attribute :pair, Types::String
@@ -41,7 +43,7 @@ module PolygonClient
       attribute :x, Types::Integer          # Exchange ID
       attribute :r, Types::Integer          # Received @ Polygon Timestamp
     end
-  
+
     class CryptoTradeEvent < Dry::Struct
       attribute :ev, Types::String.enum("XT")
       attribute :pair, Types::String
@@ -53,7 +55,7 @@ module PolygonClient
       attribute :x, Types::Integer          # Exchange ID
       attribute :r, Types::Integer          # Received @ Polygon Timestamp
     end
-  
+
     class CryptoAggregateEvent < Dry::Struct
       attribute :ev, Types::String.enum("XA")
       attribute :pair, Types::String
@@ -69,7 +71,7 @@ module PolygonClient
       attribute :s, Types::Integer          # Tick Start Timestamp
       attribute :e, Types::Integer          # Tick End Timestamp
     end
-  
+
     class CryptoSipEvent < Dry::Struct
       attribute :ev, Types::String.enum("XS")
       attribute :pair, Types::String
@@ -81,19 +83,19 @@ module PolygonClient
       attribute :bx, Types::Integer         # Bid Exchange
       attribute :t, Types::Integer          # Tick Start Timestamp
     end
-  
+
     class CryptoLevel2Event < Dry::Struct
       attribute :ev, Types::String.enum("XL2")
       attribute :pair, Types::String
-      attribute :b, Types::Array.of(Types::Array.of(Types::JSON::Decimal)) 
-                                            # Bid Prices ( 100 depth cap )
-                                            # [ Price, Size ]
+      attribute :b, Types::Array.of(Types::Array.of(Types::JSON::Decimal))
+      # Bid Prices ( 100 depth cap )
+      # [ Price, Size ]
       attribute :a, Types::Array.of(Types::Array.of(Types::JSON::Decimal))
-                                            # Ask Prices ( 100 depth cap )
-                                            # [ Price, Size ]
+      # Ask Prices ( 100 depth cap )
+      # [ Price, Size ]
       attribute :t, Types::Integer          # Timestamp Unix ( ms )
       attribute :x, Types::Integer          # Exchange ID
       attribute :r, Types::Integer          # Tick Received @ Polygon Timestamp
-    end  
+    end
   end
 end

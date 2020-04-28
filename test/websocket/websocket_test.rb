@@ -7,6 +7,5 @@ class WebsocketTest < Minitest::Test
     @client = PolygonClient::Websocket::Client.new(api_key)
   end
 
-  def teardown
-  end
+  def teardown; end
 end
