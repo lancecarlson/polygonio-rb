@@ -64,32 +64,58 @@ module PolygonClient
       class TickerDetailsResponse < PolygonResponse
         attribute? :logo, Types::String
         attribute :exchange, Types::String
+        attribute :exchange_symbol, Types::String
         attribute :name, Types::String
         attribute :symbol, Types::String
-        attribute :listdate?, Types::String
-        attribute :cik?, Types::String
-        attribute :bloomberg?, Types::String
-        attribute :figi?, Types::String
-        attribute :lie?, Types::String
-        attribute :sic?, Types::Integer
-        attribute :country?, Types::String
-        attribute :industry?, Types::String
-        attribute :sector?, Types::String
-        attribute :marketcap?, Types::Integer
-        attribute :employees?, Types::Integer
-        attribute :phone?, Types::String
-        attribute :ceo?, Types::String
-        attribute :url?, Types::String
-        attribute :description?, Types::String
-        attribute :similar?, Types::Array
-        attribute :tags?, Types::Array
-        attribute :updated?, Types::String
+        attribute? :listdate, Types::JSON::Date
+        attribute? :cik, Types::String
+        attribute? :bloomberg, Types::String
+        attribute? :figi, Types::String.optional
+        attribute? :lie, Types::String
+        attribute? :sic, Types::Integer
+        attribute? :country, Types::String
+        attribute? :industry, Types::String
+        attribute? :sector, Types::String
+        attribute? :marketcap, Types::Integer
+        attribute? :employees, Types::Integer
+        attribute? :phone, Types::String
+        attribute? :ceo, Types::String
+        attribute? :url, Types::String
+        attribute? :description, Types::String
+        attribute? :similar, Types::Array
+        attribute? :tags, Types::Array
+        attribute? :hq_address, Types::String
+        attribute? :hq_state, Types::String
+        attribute? :hq_country, Types::String
+        attribute? :active, Types::Bool
+        attribute? :updated, Types::String
       end
 
       def details(symbol)
         symbol = Types::String[symbol]
         res = client.request.get("/v1/meta/symbols/#{symbol}/company")
         TickerDetailsResponse[res.body]
+      end
+
+      class NewsResponse < PolygonResponse
+        attribute :symbols, Types::Array.of(Types::String)
+        attribute :title, Types::String
+        attribute :url, Types::String
+        attribute :source, Types::String
+        attribute :summary, Types::String
+        attribute? :image, Types::String
+        attribute :timestamp, Types::JSON::DateTime
+        attribute :keywords, Types::Array.of(Types::String)
+      end
+
+      def news(symbol, page = 1, perpage = 50)
+        symbol = Types::String[symbol]
+        page = Types::Integer[page]
+        perpage = Types::Integer[perpage]
+        opts = { page: page, perpage: perpage }
+
+        res = client.request.get("/v1/meta/symbols/#{symbol}/news", opts)
+        Types::Array.of(NewsResponse)[res.body]
       end
     end
   end

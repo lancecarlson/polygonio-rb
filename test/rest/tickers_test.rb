@@ -28,18 +28,16 @@ class TickersTest < Minitest::Test
   end
 
   def test_details
-    skip "Need higher plan"
-
     VCR.use_cassette("ticker_details") do
       res = @client.tickers.details("AAPL")
+      assert_equal "Apple Inc.", res.name
     end
   end
 
   def test_news
-    skip "Need higher plan"
-
-    VCR.use_cassette("ticker_details") do
-      res = @client.tickers.news("AAPL")
+    VCR.use_cassette("ticker_news") do
+      res = @client.tickers.news("AAPL", 4, 49)
+      assert_equal 49, res.length
     end
   end
 end
