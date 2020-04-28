@@ -3,7 +3,24 @@
 module PolygonClient
   module Rest
     class PolygonResponse < Dry::Struct
-      transform_keys(&:to_sym)
+      NUMBERS_TO_WORDS = {
+        "10" => "ten",
+        "9" => "nine",
+        "8" => "eight",
+        "7" => "seven",
+        "6" => "six",
+        "5" => "five",
+        "4" => "four",
+        "3" => "three",
+        "2" => "two",
+        "1" => "one"
+      }.freeze
+
+      transform_keys do |k|
+        k = NUMBERS_TO_WORDS[k] if NUMBERS_TO_WORDS.key?(k)
+
+        k.underscore.to_sym
+      end
     end
   end
 end

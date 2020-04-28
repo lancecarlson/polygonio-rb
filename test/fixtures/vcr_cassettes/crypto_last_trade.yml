@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/last/crypto/BTC/USD?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 15:32:56 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '173'
+      connection:
+      - close
+      x-request-id:
+      - efbffb5c03e3c79522c05c768c23d562, efbffb5c03e3c79522c05c768c23d562
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"success","symbol":"BTC-USD","last":{"price":7722.67,"size":0.001999,"exchange":4,"conditions":[1,0,0,0],"timestamp":1588087976176},"lastAverage":{"avg":7724.952,"tradesAveraged":10}}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 15:32:56 GMT
+recorded_with: VCR 5.1.0

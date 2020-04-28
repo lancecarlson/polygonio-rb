@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v2/snapshot/locale/global/markets/crypto/tickers/X:BTCUSD?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 17:02:21 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      vary:
+      - Accept-Encoding
+      x-request-id:
+      - cc00f2a9aae526de9615e2bf545f56ca, cc00f2a9aae526de9615e2bf545f56ca
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"OK","ticker":{"day":{"c":7722.97,"h":7775.09,"l":7650,"o":7712.46,"v":106026.47847933,"vw":0},"lastTrade":{"c":[1],"i":"302763085","p":7723.54,"s":0.017055,"t":1588093339017,"x":4},"min":{"c":7722.97,"h":7736.18,"l":7722,"o":7724.85,"v":53.23072914,"vw":0},"prevDay":{"c":7701.74,"h":7712.46,"l":7701.6,"o":7712.46,"v":0.134063,"vw":7701.8556},"ticker":"X:BTCUSD","todaysChange":21.8,"todaysChangePerc":0.283053,"updated":1588132808999}}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 17:02:21 GMT
+recorded_with: VCR 5.1.0

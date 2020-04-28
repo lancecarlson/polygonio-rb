@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_runtime_dependency "activesupport", ["~> 6.0", ">= 6.0.2.2"]
   spec.add_runtime_dependency "dry-struct", ["~> 1.2", ">= 1.2.0"]
   spec.add_runtime_dependency "dry-types", ["~> 1.2", ">= 1.2.2"]
   spec.add_runtime_dependency "eventmachine", ["~> 1.2", ">= 1.2.7"]

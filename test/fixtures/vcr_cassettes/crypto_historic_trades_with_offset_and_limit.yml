@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/historic/crypto/BTC/USD/2019-04-28?apiKey=<API_KEY>&limit=12&offset=1556409622239
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 15:56:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      vary:
+      - Accept-Encoding
+      x-request-id:
+      - 15fc9bcc2d101047ed5161236d4a1ee6, 15fc9bcc2d101047ed5161236d4a1ee6
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"day":"2019-04-28","map":{"c":"conditions","p":"price","s":"size","t":"timestamp","x":"exchange"},"msLatency":12,"status":"success","symbol":"BTC-USD","ticks":[{"s":0.0007,"p":5294.32,"x":10,"t":1556409622248,"c":[1]},{"s":6.1156268,"p":5401.9,"x":2,"t":1556409622521,"c":[1]},{"s":0.0002,"p":5293.18,"x":11,"t":1556409622733,"c":[1]},{"s":0.02,"p":5293.33,"x":11,"t":1556409622918,"c":[1]},{"s":0.03025571,"p":5401.9,"x":2,"t":1556409623048,"c":[1]},{"s":0.050174,"p":5296.54,"x":4,"t":1556409623870,"c":[4]},{"s":0.003339,"p":5296.53,"x":4,"t":1556409624025,"c":[4]},{"s":0.00452066,"p":5171.27,"x":1,"t":1556409624100,"c":[1]},{"s":0.06,"p":5293.33,"x":11,"t":1556409624108,"c":[1]},{"s":0.002777,"p":5295.1,"x":4,"t":1556409625594,"c":[3]},{"s":0.0001,"p":5293.38,"x":11,"t":1556409625880,"c":[1]},{"s":0.002088,"p":5295.1,"x":4,"t":1556409625966,"c":[3]}],"type":"crypto"}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 15:56:42 GMT
+recorded_with: VCR 5.1.0

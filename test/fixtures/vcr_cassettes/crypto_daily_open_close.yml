@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/open-close/crypto/BTC/USD/2019-04-28?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 15:28:09 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '262'
+      connection:
+      - close
+      x-request-id:
+      - 18f3f8f7b361ee4fa72a4bd0d0a0f118, 18f3f8f7b361ee4fa72a4bd0d0a0f118
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"symbol":"BTC-USD","isUTC":true,"day":"2019-4-27","open":5314.51,"close":5294.1,"openTrades":[{"s":0.0045,"p":5314.51,"x":11,"t":1556323200082,"c":[2]},{"s":0.094075,"p":5315,"x":4,"t":1556323200287,"c":[4]},{"s":0.24863,"p":5314.51,"x":10,"t":1556323200326,"c":[2]},{"s":0.04753,"p":5314.12,"x":4,"t":1556323200356,"c":[3]},{"s":0.046674,"p":5315,"x":4,"t":1556323200512,"c":[4]}],"closingTrades":[{"s":0.00068,"p":5294.1,"x":10,"t":1556409599862,"c":[2]},{"s":0.024184,"p":5295.69,"x":4,"t":1556409599301,"c":[4]},{"s":0.002436,"p":5295.69,"x":4,"t":1556409599190,"c":[4]},{"s":0.1,"p":5295.69,"x":4,"t":1556409598531,"c":[4]},{"s":0.352302,"p":5295.69,"x":4,"t":1556409598509,"c":[4]}]}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 15:28:09 GMT
+recorded_with: VCR 5.1.0
