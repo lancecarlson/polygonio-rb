@@ -18,39 +18,26 @@ module PolygonClient
     SERVER_ERROR_STATUSES = (500...600).freeze
 
     def on_complete(response_env) # rubocop:disable Metrics/MethodLength
-      error = into_error(response_env)
-
-      status = error&.code
-      status ||= response_env[:status]
+      status = response_env.status
 
       case status
       when 400
-        raise Errors::BadRequestError, error&.message
+        raise Errors::BadRequestError
       when 401
-        raise Errors::UnauthorizedError, error&.message
+        raise Errors::UnauthorizedError
       when 403
-        raise Errors::ForbiddenError, error&.message
+        raise Errors::ForbiddenError
       when 404
-        raise Errors::ResourceNotFoundError, error&.message
+        raise Errors::ResourceNotFoundError
       when CLIENT_ERROR_STATUSES
-        raise Errors::UnknownError, error&.message
+        raise Errors::UnknownError
       when SERVER_ERROR_STATUSES
-        raise Errors::ServerError, response_env.body["error"]
-      else
-        raise Errors::UnknownError, error.message unless error.nil?
+        raise Errors::ServerError
       end
     end
 
     def call(request_env)
       @app.call(request_env).on_complete(&method(:on_complete))
-    end
-
-    def into_error(response_env)
-      return nil if response_env[:status] == 202
-      return nil if response_env.body["error"].nil?
-      return nil if response_env.body["error"].is_a? String
-
-      Responses::Error.new(response_env.body["error"])
     end
   end
 end
