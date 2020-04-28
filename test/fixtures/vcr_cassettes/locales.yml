@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v2/reference/locales?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 07:35:35 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '268'
+      connection:
+      - close
+      x-request-id:
+      - e773bace89b64607e3517e4480866069, e773bace89b64607e3517e4480866069
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"OK","results":[{"locale":"G","name":"Global"},{"locale":"US","name":"United
+        States of America"},{"locale":"GB","name":"Great Britain"},{"locale":"CA","name":"Canada"},{"locale":"NL","name":"Netherlands"},{"locale":"GR","name":"Greece"},{"locale":"SP","name":"Spain"},{"locale":"DE","name":"Germany"},{"locale":"BE","name":"Belgium"},{"locale":"DK","name":"Denmark"},{"locale":"FI","name":"Finland"},{"locale":"IE","name":"Ireland"},{"locale":"PT","name":"Portugal"},{"locale":"IN","name":"India"},{"locale":"MX","name":"Mexico"},{"locale":"FR","name":"France"},{"locale":"CN","name":"China"},{"locale":"CH","name":"Switzerland"},{"locale":"SE","name":"Sweden"}]}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 07:35:35 GMT
+recorded_with: VCR 5.1.0

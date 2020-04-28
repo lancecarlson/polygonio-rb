@@ -8,4 +8,6 @@ module PolygonClient
   end
 end
 
+require_relative "api/locales"
+require_relative "api/markets"
 require_relative "api/tickers"

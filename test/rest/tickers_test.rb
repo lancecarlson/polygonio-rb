@@ -34,4 +34,12 @@ class TickersTest < Minitest::Test
       res = @client.tickers.details("AAPL")
     end
   end
+
+  def test_news
+    skip "Need higher plan"
+
+    VCR.use_cassette("ticker_details") do
+      res = @client.tickers.news("AAPL")
+    end
+  end
 end

@@ -33,6 +33,14 @@ module PolygonClient
       def tickers
         Rest::Tickers.new(self)
       end
+
+      def locales
+        Rest::Locales.new(self)
+      end
+
+      def markets
+        Rest::Markets.new(self)
+      end
     end
 
     class PolygonRestRequest < Dry::Struct

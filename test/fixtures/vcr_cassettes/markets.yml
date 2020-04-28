@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v2/reference/markets?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 07:22:06 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '182'
+      connection:
+      - close
+      x-request-id:
+      - 23c8fa077367ce6baa9ea798c1d8bf36, 23c8fa077367ce6baa9ea798c1d8bf36
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"OK","results":[{"market":"STOCKS","desc":"Stocks / Equities
+        / ETFs"},{"market":"INDICES","desc":"Indices"},{"market":"MF","desc":"Mutual
+        Funds"},{"market":"MMF","desc":"Money Market Funds"},{"market":"CRYPTO","desc":"Crypto"},{"market":"FX","desc":"Forex
+        / Currencies"},{"market":"BONDS","desc":"Bonds"}]}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 07:22:06 GMT
+recorded_with: VCR 5.1.0

@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/marketstatus/now?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 07:23:51 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '135'
+      connection:
+      - close
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - "*"
+      x-request-id:
+      - 5bf69a97379b93002b36ccb1bd41d6f6, 5bf69a97379b93002b36ccb1bd41d6f6
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"market":"closed","serverTime":"2020-04-28T03:23:51-04:00","exchanges":{"nyse":"closed","nasdaq":"closed","otc":"closed"},"currencies":{"fx":"open","crypto":"open"}}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 07:23:51 GMT
+recorded_with: VCR 5.1.0
