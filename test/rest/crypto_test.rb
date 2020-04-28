@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class LocalesTest < Minitest::Test
+class CryptoTest < Minitest::Test
   def setup
     @client = PolygonClient::Rest::Client.new(api_key)
   end
@@ -10,9 +10,10 @@ class LocalesTest < Minitest::Test
   def teardown; end
 
   def test_list
-    VCR.use_cassette("locales") do
-      res = @client.locales.list
-      assert_equal "Global", res.results.first.name
+    VCR.use_cassette("cryptos") do
+      res = @client.crypto.list
+      assert_equal 22, res.length
+      assert_equal "GDAX", res.first.name
     end
   end
 end

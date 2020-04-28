@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/meta/crypto-exchanges?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 07:45:44 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '446'
+      connection:
+      - close
+      x-request-id:
+      - d99c0198da3b5066ca0eb203550397ec, d99c0198da3b5066ca0eb203550397ec
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":1,"type":"exchange","market":"crypto","name":"GDAX","url":"https://www.gdax.com/"},{"id":2,"type":"exchange","market":"crypto","name":"BITFINEX","url":"https://www.bitfinex.com/"},{"id":3,"type":"exchange","market":"crypto","name":"BitMEX","url":"https://www.bitmex.com/"},{"id":4,"type":"exchange","market":"crypto","name":"Binance","url":"https://www.binance.com/"},{"id":5,"type":"exchange","market":"crypto","name":"Binance","url":"https://gemini.com/"},{"id":6,"type":"exchange","market":"crypto","name":"Bitstamp","url":"https://www.bitstamp.net/"},{"id":7,"type":"exchange","market":"crypto","name":"POLONIEX","url":"https://poloniex.com/"},{"id":8,"type":"exchange","market":"crypto","name":"CEXIO","url":"https://cex.io/"},{"id":9,"type":"exchange","market":"crypto","name":"BitBay","url":"https://bitbay.net/en"},{"id":10,"type":"exchange","market":"crypto","name":"HitBTC","url":"https://hitbtc.com/"},{"id":11,"type":"exchange","market":"crypto","name":"Huobi","url":"https://www.huobi.pro/"},{"id":12,"type":"exchange","market":"crypto","name":"bitFlyer","url":"https://bitflyer.com/en-us/"},{"id":13,"type":"exchange","market":"crypto","name":"Luno","url":"https://www.luno.com/en/"},{"id":14,"type":"exchange","market":"crypto","name":"Coin
+        Mate","url":"https://coinmate.io/"},{"id":15,"type":"exchange","market":"crypto","name":"OKCoin","url":"https://www.okcoin.com/lang/en-US/"},{"id":16,"type":"exchange","market":"crypto","name":"WEX","url":"https://wex.nz/"},{"id":17,"type":"exchange","market":"crypto","name":"OKEx","url":"https://www.okex.com/"},{"id":18,"type":"exchange","market":"crypto","name":"BL3P","url":"https://bl3p.eu/"},{"id":19,"type":"exchange","market":"crypto","name":"BTCMarkets","url":"https://www.btcmarkets.net/"},{"id":20,"type":"exchange","market":"crypto","name":"CCEX","url":"https://c-cex.com/"},{"id":21,"type":"exchange","market":"crypto","name":"Coincheck","url":"https://coincheck.com/"},{"id":22,"type":"exchange","market":"crypto","name":"coinfloor","url":"https://www.coinfloor.co.uk/"}]'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 07:45:44 GMT
+recorded_with: VCR 5.1.0

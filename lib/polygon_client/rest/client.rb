@@ -41,6 +41,14 @@ module PolygonClient
       def markets
         Rest::Markets.new(self)
       end
+
+      def forex
+        Rest::Forex.new(self)
+      end
+
+      def crypto
+        Rest::Crypto.new(self)
+      end
     end
 
     class PolygonRestRequest < Dry::Struct
