@@ -71,7 +71,7 @@ class CryptoTest < Minitest::Test
 
   def test_gainers_losers
     VCR.use_cassette("crypto_snapshot_gainers_losers") do
-      res = @client.crypto.snapshot_gainers_losers("gainers")
+      res = @client.crypto.snapshot_gainers_losers(:gainers)
       assert_equal 21, res.tickers.length
       assert_equal "X:SNCUSD", res.tickers.first.ticker
     end

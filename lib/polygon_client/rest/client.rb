@@ -51,27 +51,17 @@ module PolygonClient
       end
     end
 
-    class PolygonRestRequest < Dry::Struct
-      transform_keys(&:to_sym)
-    end
-
     class PolygonRestHandler
       attr_reader :client
 
       def initialize(client)
         @client = client
       end
+    end
 
-      protected
-
-      def parse_response(res, name)
-        body = res.body
-
-        raise(Errors::NilResponseError) if body.nil?
-        raise(Errors::UnexpectedResponseError, body) if body[name].nil?
-
-        body[name]
-      end
+    class PagingParameters < Dry::Struct
+      attribute? :offset, Types::Integer.optional
+      attribute? :limit, Types::Integer.default(100)
     end
   end
 end

@@ -87,16 +87,11 @@ module PolygonClient
         end
       end
 
-      class HistoricTradesPagingParameters < Dry::Struct
-        attribute? :offset, Types::Integer.optional
-        attribute? :limit, Types::Integer.default(100)
-      end
-
       def historic_trades(from, to, date, opts = {})
         from = Types::String[from]
         to = Types::String[to]
         date = Types::JSON::Date[date]
-        opts = HistoricTradesPagingParameters[opts]
+        opts = PagingParameters[opts]
 
         res = client.request.get("/v1/historic/crypto/#{from}/#{to}/#{date}", opts.to_h)
         HistoricTradesResponse[res.body]
@@ -194,7 +189,7 @@ module PolygonClient
       class SnapshotGainersLosersResponse < FullSnapshotResponse; end
 
       def snapshot_gainers_losers(direction)
-        direction = Types::String[direction]
+        direction = Types::Coercible::String.enum("gainers", "losers")[direction]
         res = client.request.get("/v2/snapshot/locale/global/markets/crypto/#{direction}")
         SnapshotGainersLosersResponse[res.body]
       end

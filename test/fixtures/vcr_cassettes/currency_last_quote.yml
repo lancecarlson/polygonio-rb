@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/last_quote/currencies/AUD/USD?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 20:28:40 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '123'
+      connection:
+      - close
+      x-request-id:
+      - 2d55d9513dd3139bb7aaeb519c26d043, 2d55d9513dd3139bb7aaeb519c26d043
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"success","symbol":"AUD/USD","last":{"bid":0.6494,"ask":0.6498,"exchange":48,"timestamp":1588105717000}}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 20:28:40 GMT
+recorded_with: VCR 5.1.0

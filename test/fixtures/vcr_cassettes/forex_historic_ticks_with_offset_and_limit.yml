@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/historic/forex/AUD/USD/2019-04-28?apiKey=<API_KEY>&limit=12&offset=1556484799000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Tue, 28 Apr 2020 20:01:31 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      vary:
+      - Accept-Encoding
+      x-request-id:
+      - 60bd722111a4ea0099d9b9560e7e1cf4, 60bd722111a4ea0099d9b9560e7e1cf4
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"day":"2019-04-28","map":{"a":"ask","b":"bid","t":"timestamp"},"msLatency":2,"pair":"AUD/USD","status":"success","ticks":[{"b":0.70344,"a":0.70407,"x":48,"t":1556484800000},{"b":0.70349,"a":0.70412,"x":48,"t":1556484804000},{"b":0.70362,"a":0.70414,"x":48,"t":1556484811000},{"b":0.70357,"a":0.70414,"x":48,"t":1556484815000},{"b":0.7036,"a":0.70414,"x":48,"t":1556484828000},{"b":0.70358,"a":0.70413,"x":48,"t":1556484845000},{"b":0.70347,"a":0.70401,"x":48,"t":1556484882000},{"b":0.70341,"a":0.70394,"x":48,"t":1556484883000},{"b":0.7034,"a":0.704,"x":48,"t":1556484884000},{"b":0.70338,"a":0.70401,"x":48,"t":1556484885000},{"b":0.70344,"a":0.70407,"x":48,"t":1556484887000},{"b":0.70361,"a":0.70414,"x":48,"t":1556484888000}],"type":"forex"}'
+    http_version: null
+  recorded_at: Tue, 28 Apr 2020 20:01:31 GMT
+recorded_with: VCR 5.1.0
