@@ -13,7 +13,7 @@ class TickersTest < Minitest::Test
     VCR.use_cassette("tickers") do
       res = @client.tickers.list
       assert_equal 1, res.page
-      assert_equal 50, res.perPage
+      assert_equal 50, res.per_page
       assert_equal 81_972, res.count
       assert_equal 50, res.tickers.length
       assert_equal "A", res.tickers.first.ticker

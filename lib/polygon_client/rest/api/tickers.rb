@@ -10,7 +10,7 @@ module PolygonClient
         attribute :locale, Types::String
         attribute :currency, Types::String
         attribute :active, Types::Bool
-        attribute :primaryExch, Types::String
+        attribute :primary_exch, Types::String
         attribute? :type, Types::String
         attribute? :codes do
           attribute? :cik, Types::String
@@ -25,7 +25,7 @@ module PolygonClient
 
       class TickerResponse < PolygonResponse
         attribute :page, Types::Integer
-        attribute :perPage, Types::Integer
+        attribute :per_page, Types::Integer
         attribute :count, Types::Integer
         attribute :status, Types::String
         attribute :tickers, Types::Array.of(Ticker)
@@ -52,7 +52,7 @@ module PolygonClient
         attribute :status, Types::String
         attribute :results do
           attribute :types, Types::Hash
-          attribute :indexTypes, Types::Hash
+          attribute :index_types, Types::Hash
         end
       end
 

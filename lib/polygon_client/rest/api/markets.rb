@@ -18,7 +18,7 @@ module PolygonClient
 
       class MarketStatusResponse < PolygonResponse
         attribute :market, Types::String
-        attribute :serverTime, Types::String
+        attribute :server_time, Types::String
         attribute :exchanges do
           attribute :nyse, Types::String
           attribute :nasdaq, Types::String
