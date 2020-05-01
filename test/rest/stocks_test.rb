@@ -66,12 +66,13 @@ class StocksTest < Minitest::Test
     end
   end
 
-  #def test_full_snapshot
-  #  VCR.use_cassette("stocks_full_snapshot") do
-  #    res = @client.stocks.full_snapshot
-  #    assert_equal "NMCI", res.tickers.first.ticker
-  #  end
-  #end
+  def test_full_snapshot
+    # skip("uncomment to speed up tests")
+    VCR.use_cassette("stocks_full_snapshot") do
+      res = @client.stocks.full_snapshot
+      assert_equal "NMCI", res.tickers.first.ticker
+    end
+  end
 
   def test_snapshot
     VCR.use_cassette("stocks_snapshot") do
@@ -84,14 +85,14 @@ class StocksTest < Minitest::Test
     VCR.use_cassette("stocks_snapshot_gainers_losers") do
       res = @client.stocks.snapshot_gainers_losers("gainers")
       assert_equal "NTG", res.tickers.first.ticker
-   end
+    end
   end
 
   def test_previous_close
     VCR.use_cassette("stocks_previous_close") do
       res = @client.stocks.previous_close("AAPL")
       assert_equal "AAPL", res.results.first.T
-   end
+    end
   end
 
   def test_aggregates

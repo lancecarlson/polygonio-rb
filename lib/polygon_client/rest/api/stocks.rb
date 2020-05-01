@@ -120,7 +120,7 @@ module PolygonClient
           attribute :bidsize, Types::Integer
           attribute :bidexchange, Types::Integer
           attribute :timestamp, Types::Integer
-        end 
+        end
       end
 
       def last_quote(symbol)
