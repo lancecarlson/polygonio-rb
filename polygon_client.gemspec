@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "polygon_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "polygon_client"
+  spec.name          = "polygonio"
   spec.version       = PolygonClient::VERSION
   spec.authors       = ["Lance Carlson"]
   spec.email         = ["lancecarlson@gmail.com"]
@@ -14,6 +14,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Client library for polygon.io"
   spec.description   = "Client library for polygon.io's REST and Websocker API's"
+
+  spec.metadata = {
+    "homepage_uri" => "https://github.com/lancecarlson/polygon-client-rb",
+    "source_code_uri" => 'https://github.com/lancecarlson/polygon-client-rb',
+    "bug_tracker_uri" => 'https://github.com/lancecarlson/polygon-client-rb/issues'
+  }
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
