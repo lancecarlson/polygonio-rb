@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class LocalesTest < Minitest::Test
+class ReferenceLocalesTest < Minitest::Test
   def setup
     @client = PolygonClient::Rest::Client.new(api_key)
   end
@@ -11,7 +11,7 @@ class LocalesTest < Minitest::Test
 
   def test_list
     VCR.use_cassette("locales") do
-      res = @client.locales.list
+      res = @client.reference.locales.list
       assert_equal "Global", res.results.first.name
     end
   end

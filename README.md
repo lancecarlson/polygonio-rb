@@ -29,7 +29,9 @@ And then execute:
 
 ```ruby
 client = PolygonClient::Rest::Client.new(api_key)
-client.tickers.list
+
+# See tests for a full reference of all of methods
+client.reference.tickers.list
 
 PolgygonClient::Websocket::Client.new(api_key).subscribe("XQ.BTC-USD") do |event|
   pp "Incoming message"

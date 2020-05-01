@@ -3,6 +3,8 @@
 module PolygonClient
   module Rest
     class Client
+      Struct.new("Reference", :locales, :markets, :stocks, :tickers)
+
       BASE_URL = "https://api.polygon.io/"
 
       attr_reader :url, :api_key
@@ -30,16 +32,13 @@ module PolygonClient
         end
       end
 
-      def tickers
-        Rest::Tickers.new(self)
-      end
-
-      def locales
-        Rest::Locales.new(self)
-      end
-
-      def markets
-        Rest::Markets.new(self)
+      def reference
+        Struct::Reference.new(
+          Rest::Reference::Locales.new(self),
+          Rest::Reference::Markets.new(self),
+          Rest::Reference::Stocks.new(self),
+          Rest::Reference::Tickers.new(self)
+        )
       end
 
       def forex

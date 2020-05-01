@@ -27,6 +27,7 @@ end
 
 require_relative "api/crypto"
 require_relative "api/forex"
-require_relative "api/locales"
-require_relative "api/markets"
-require_relative "api/tickers"
+require_relative "api/reference/locales"
+require_relative "api/reference/markets"
+require_relative "api/reference/stocks"
+require_relative "api/reference/tickers"
