@@ -1,4 +1,4 @@
-# PolygonClient (Ruby)
+# PolygonioClient (Ruby)
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This is a client library for Polygon.io. Please see [Polygon.io](https://polygon
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'polygon_client'
+gem 'polygonio'
 ```
 
 And then execute:
