@@ -41,6 +41,10 @@ module PolygonClient
         )
       end
 
+      def stocks
+        Rest::Stocks.new(self)
+      end
+
       def forex
         Rest::Forex.new(self)
       end

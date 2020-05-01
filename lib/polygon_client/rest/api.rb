@@ -18,8 +18,8 @@ module PolygonClient
 
       transform_keys do |k|
         k = NUMBERS_TO_WORDS[k] if NUMBERS_TO_WORDS.key?(k)
-
-        k.underscore.to_sym
+        k = k.underscore unless k.length == 1
+        k.to_sym
       end
     end
   end
@@ -27,6 +27,7 @@ end
 
 require_relative "api/crypto"
 require_relative "api/forex"
+require_relative "api/stocks"
 require_relative "api/reference/locales"
 require_relative "api/reference/markets"
 require_relative "api/reference/stocks"

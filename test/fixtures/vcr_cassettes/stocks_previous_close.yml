@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v2/aggs/ticker/AAPL/prev?apiKey=<API_KEY>&unadjusted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Fri, 01 May 2020 22:38:33 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '197'
+      connection:
+      - close
+      x-request-id:
+      - e724e0931ee3c8a94d56f5d1d5720e22, e724e0931ee3c8a94d56f5d1d5720e22
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"ticker":"AAPL","status":"OK","queryCount":1,"resultsCount":1,"adjusted":true,"results":[{"T":"AAPL","v":4.5755041e+07,"vw":291.6754,"o":289.96,"c":293.8,"h":294.53,"l":288.35,"t":1588276800000}]}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 22:38:33 GMT
+recorded_with: VCR 5.1.0

@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/open-close/AAPL/2018-03-02?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Fri, 01 May 2020 22:06:11 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '149'
+      connection:
+      - close
+      x-request-id:
+      - 6a8e2754099600a9cdb19b9e5497ea5f, 6a8e2754099600a9cdb19b9e5497ea5f
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"OK","from":"2018-03-02T03:30:00Z","symbol":"AAPL","open":174.37,"high":175.25,"low":172.2,"close":174.62,"afterHours":175.059,"volume":28738984}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 22:06:11 GMT
+recorded_with: VCR 5.1.0

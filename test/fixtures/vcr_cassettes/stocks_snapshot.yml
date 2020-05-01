@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers/AAPL?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Fri, 01 May 2020 22:26:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      vary:
+      - Accept-Encoding
+      x-request-id:
+      - ec73c5901c64959258f2820f0613c915, ec73c5901c64959258f2820f0613c915
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"OK","ticker":{"day":{"c":289.07,"h":299,"l":285.85,"o":286.25,"v":125419718,"vw":292.4257},"lastQuote":{"P":290.4,"S":1,"p":290.05,"s":10,"t":1588371931877546830},"lastTrade":{"c":[12],"i":"145610","p":290.35,"s":134,"t":1588371916252176063,"x":12},"min":{"c":290.35,"h":290.35,"l":290.34,"o":290.34,"v":2164,"vw":290.3438},"prevDay":{"c":293.8,"h":294.53,"l":288.35,"o":289.96,"v":45755041,"vw":291.6754},"ticker":"AAPL","todaysChange":-3.45,"todaysChangePerc":-1.174,"updated":1588371916252176063}}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 22:26:45 GMT
+recorded_with: VCR 5.1.0

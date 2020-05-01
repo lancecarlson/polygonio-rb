@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/meta/conditions/quotes?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Fri, 01 May 2020 22:14:24 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '512'
+      connection:
+      - close
+      x-request-id:
+      - e1ed4ecb2f909ede2908066fabcc630a, e1ed4ecb2f909ede2908066fabcc630a
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"0":"Regular","1":"RegularTwoSidedOpen","2":"RegularOneSidedOpen","3":"SlowAsk","4":"SlowBid","5":"SlowBidAsk","6":"SlowDueLRPBid","7":"SlowDueLRPAsk","8":"SlowDueNYSELRP","9":"SlowDueSetSlowListBidAsk","10":"ManualAskAutomaticBid","11":"ManualBidAutomaticAsk","12":"ManualBidAndAsk","13":"Opening","14":"Closing","15":"Closed","16":"Resume","17":"FastTrading","18":"TradingRangeIndication","19":"MarketMakerQuotesClosed","20":"NonFirm","21":"NewsDissemination","22":"OrderInflux","23":"OrderImbalance","24":"DueToRelatedSecurityNewsDissemination","25":"DueToRelatedSecurityNewsPending","26":"AdditionalInformation","27":"NewsPending","28":"AdditionalInformationDueToRelatedSecurity","29":"DueToRelatedSecurity","30":"InViewOfCommon","31":"EquipmentChangeover","32":"NoOpenNoResume","33":"SubPennyTrading","34":"AutomatedBidNoOfferNoBid","35":"LuldPriceBand","36":"MarketWideCircuitBreakerLevel1","37":"MarketWideCircuitBreakerLevel2","38":"MarketWideCircuitBreakerLevel3","39":"RepublishedLuldPriceBand","40":"OnDemandAuction","41":"CashOnlySettlement","42":"NextDaySettlement","43":"LULDTradingPause","71":"SlowDueLRPBidAsk"}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 22:14:24 GMT
+recorded_with: VCR 5.1.0

@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.polygon.io/v1/meta/conditions/trades?apiKey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.17.8
+      date:
+      - Fri, 01 May 2020 22:14:24 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '552'
+      connection:
+      - close
+      x-request-id:
+      - d1d6c9f405f3c74b8b44f2444ba390f8, d1d6c9f405f3c74b8b44f2444ba390f8
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"0":"Regular","1":"Acquisition","2":"AveragePrice","3":"AutomaticExecution","4":"Bunched","5":"BunchSold","6":"CAPElection","7":"CashTrade","8":"Closing","9":"Cross","10":"DerivativelyPriced","11":"Distribution","12":"FormT(ExtendedHours)","13":"FormTOutOfSequence","14":"InterMarketSweep","15":"MarketCenterOfficialClose","16":"MarketCenterOfficialOpen","17":"MarketCenterOpening","18":"MarketCenterReOpenning","19":"MarketCenterClosing","20":"NextDay","21":"PriceVariation","22":"PriorReferencePrice","23":"Rule155Amex","24":"Rule127Nyse","25":"Opening","26":"Opened","27":"RegularStoppedStock","28":"ReOpening","29":"Seller","30":"SoldLast","31":"SoldLastStoppedStock","32":"SoldOutOfSequence","33":"SoldOutOfSequenceStoppedStock","34":"Split","35":"StockOption","36":"YellowFlag","37":"OddLot","38":"CorrectedConsolidatedClosePrice","39":"Unknown","40":"Held","41":"TradeThruExempt","42":"NonEligible","43":"NonEligible-extended","44":"Cancelled","45":"Recovery","46":"Correction","47":"AsOf","48":"AsOfCorrection","49":"AsOfCancel","50":"OOB","51":"Summary","52":"Contingent","53":"Contingent(Qualified)","54":"Errored"}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 22:14:24 GMT
+recorded_with: VCR 5.1.0

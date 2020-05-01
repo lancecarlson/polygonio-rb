@@ -7,8 +7,6 @@ class ForexTest < Minitest::Test
     @client = PolygonClient::Rest::Client.new(api_key)
   end
 
-  def teardown; end
-
   def test_historic
     offset = nil
 

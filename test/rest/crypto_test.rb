@@ -7,8 +7,6 @@ class CryptoTest < Minitest::Test
     @client = PolygonClient::Rest::Client.new(api_key)
   end
 
-  def teardown; end
-
   def test_list
     VCR.use_cassette("cryptos") do
       res = @client.crypto.list
