@@ -37,7 +37,7 @@ client = PolygonClient::Rest::Client.new(api_key)
 # See tests for a full reference of all of methods
 client.reference.tickers.list
 
-client.stocks.
+client.stocks.list_exchanges
 
 client.forex.historic_ticks
 
