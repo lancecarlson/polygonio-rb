@@ -1,4 +1,4 @@
-# PolygonioClient (Ruby)
+# Polygonio (Ruby)
 
 ## Table of Contents
 

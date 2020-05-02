@@ -16,9 +16,9 @@ Gem::Specification.new do |spec|
   spec.description   = "Client library for polygon.io's REST and Websocker API's"
 
   spec.metadata = {
-    "homepage_uri" => "https://github.com/lancecarlson/polygon-client-rb",
-    "source_code_uri" => "https://github.com/lancecarlson/polygon-client-rb",
-    "bug_tracker_uri" => "https://github.com/lancecarlson/polygon-client-rb/issues"
+    "homepage_uri" => "https://github.com/lancecarlson/polygonio-rb",
+    "source_code_uri" => "https://github.com/lancecarlson/polygonio-rb",
+    "bug_tracker_uri" => "https://github.com/lancecarlson/polygonio-rb/issues"
   }
 
   # Specify which files should be added to the gem when it is released.
