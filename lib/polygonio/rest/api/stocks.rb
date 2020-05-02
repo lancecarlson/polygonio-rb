@@ -78,7 +78,7 @@ module Polygonio
         end
       end
 
-      def historic_quotes(ticker, date, params)
+      def historic_quotes(ticker, date, params = {})
         ticker = Types::String[ticker]
         date = Types::JSON::Date[date]
         params = HistoricParams[params]
