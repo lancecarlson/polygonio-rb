@@ -2,11 +2,11 @@
 
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "polygon_client/version"
+require "polygonio/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "polygonio"
-  spec.version       = PolygonClient::VERSION
+  spec.version       = Polygonio::VERSION
   spec.authors       = ["Lance Carlson"]
   spec.email         = ["lancecarlson@gmail.com"]
 
@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "homepage_uri" => "https://github.com/lancecarlson/polygon-client-rb",
-    "source_code_uri" => 'https://github.com/lancecarlson/polygon-client-rb',
-    "bug_tracker_uri" => 'https://github.com/lancecarlson/polygon-client-rb/issues'
+    "source_code_uri" => "https://github.com/lancecarlson/polygon-client-rb",
+    "bug_tracker_uri" => "https://github.com/lancecarlson/polygon-client-rb/issues"
   }
 
   # Specify which files should be added to the gem when it is released.

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PolygonClient
+module Polygonio
   module Rest
     class Client
       Struct.new("Reference", :locales, :markets, :stocks, :tickers)

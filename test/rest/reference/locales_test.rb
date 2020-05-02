@@ -4,7 +4,7 @@ require "test_helper"
 
 class ReferenceLocalesTest < Minitest::Test
   def setup
-    @client = PolygonClient::Rest::Client.new(api_key)
+    @client = Polygonio::Rest::Client.new(api_key)
   end
 
   def teardown; end

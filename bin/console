@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "polygon_client"
+require "polygonio"
 require "dotenv/load"
 
 # You can add fixtures and/or initialization code here to make experimenting

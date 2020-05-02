@@ -32,7 +32,7 @@ All methods follow the documentation found [here]:https://polygon.io/docs pretty
 
 
 ```ruby
-client = PolygonClient::Rest::Client.new(api_key)
+client = Polygonio::Rest::Client.new(api_key)
 
 # See tests for a full reference of all of methods
 client.reference.tickers.list
@@ -43,7 +43,7 @@ client.forex.historic_ticks
 
 client.crypto.list # list exchanges
 
-PolgygonClient::Websocket::Client.new(api_key).subscribe("XQ.BTC-USD") do |event|
+Polgygonio::Websocket::Client.new(api_key).subscribe("XQ.BTC-USD") do |event|
   pp "Incoming message"
   pp event
 end

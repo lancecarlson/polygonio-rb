@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PolygonClient
+module Polygonio
   module Websocket
     class WebsocketEvent < Dry::Struct
       Statuses = Types::String.enum("connected", "successful", "auth_timeout", "auth_success", "success")

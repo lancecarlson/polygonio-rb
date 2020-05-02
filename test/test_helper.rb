@@ -8,7 +8,7 @@ require "securerandom"
 require "faker"
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "polygon_client"
+require "polygonio"
 
 require "minitest/autorun"
 require "vcr"

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PolygonClient
+module Polygonio
   module Errors
     class PolygonRestClientError < StandardError; end
 

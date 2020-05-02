@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PolygonClient
+module Polygonio
   module Websocket
     module Errors
       class PolygonWebsocketClientError < StandardError; end

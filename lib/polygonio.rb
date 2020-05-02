@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "polygon_client/version"
+require "polygonio/version"
 
 require "eventmachine"
 require "faraday"
@@ -11,6 +11,6 @@ require "dry-types"
 require "permessage_deflate"
 require "websocket/driver"
 
-require "polygon_client/types"
-require "polygon_client/rest"
-require "polygon_client/websocket"
+require "polygonio/types"
+require "polygonio/rest"
+require "polygonio/websocket"

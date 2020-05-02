@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PolygonClient
+module Polygonio
   module Rest
     class Stocks < PolygonRestHandler
       class StockExchange < PolygonResponse
