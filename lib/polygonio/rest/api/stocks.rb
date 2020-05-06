@@ -272,7 +272,7 @@ module Polygonio
         attribute :results, Types::Array do
           attribute? :T, Types::String # Not appearing
           attribute :v, Types::JSON::Decimal
-          attribute :vw, Types::JSON::Decimal
+          attribute? :vw, Types::JSON::Decimal
           attribute :o, Types::JSON::Decimal
           attribute :c, Types::JSON::Decimal
           attribute :h, Types::JSON::Decimal
