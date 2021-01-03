@@ -11,7 +11,7 @@ module Polygonio
           attribute :locale, Types::String
           attribute :currency, Types::String
           attribute :active, Types::Bool
-          attribute :primary_exch, Types::String
+          attribute :primary_exch?, Types::String
           attribute? :type, Types::String
           attribute? :codes do
             attribute? :cik, Types::String

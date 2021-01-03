@@ -9,9 +9,10 @@ module Polygonio
 
       attr_reader :url, :api_key
 
-      def initialize(api_key)
+      def initialize(api_key, &block)
         @url = BASE_URL
         @api_key = Types::String[api_key]
+        @request_builder = block if block_given?
       end
 
       RETRY_OPTIONS = {
@@ -26,6 +27,7 @@ module Polygonio
         Faraday.new(url: "#{url}?apiKey=#{api_key}") do |builder|
           builder.request :retry, RETRY_OPTIONS
           builder.use ErrorMiddleware
+          @request_builder&.call(builder)
           builder.request :json
           builder.response :oj
           builder.adapter Faraday.default_adapter

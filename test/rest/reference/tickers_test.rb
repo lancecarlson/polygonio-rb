@@ -4,7 +4,9 @@ require "test_helper"
 
 class ReferenceTickersTest < Minitest::Test
   def setup
-    @client = Polygonio::Rest::Client.new(api_key)
+    @client = Polygonio::Rest::Client.new(api_key) do |builder|
+      # builder.response :logger, nil, { headers: true, bodies: true }
+    end
   end
 
   def test_list
@@ -12,9 +14,14 @@ class ReferenceTickersTest < Minitest::Test
       res = @client.reference.tickers.list
       assert_equal 1, res.page
       assert_equal 50, res.per_page
-      assert_equal 81_972, res.count
+      assert_equal 122_669, res.count
       assert_equal 50, res.tickers.length
       assert_equal "A", res.tickers.first.ticker
+    end
+
+    VCR.use_cassette("tickers_2") do
+      res = @client.reference.tickers.list(page: 2)
+      assert_equal 2, res.page
     end
   end
 
