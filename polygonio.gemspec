@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
 
   spec.license       = "MIT"
 
-  spec.summary       = "Client library for polygon.io"
-  spec.description   = "Client library for polygon.io's REST and Websocker API's"
+  spec.summary       = "Client library for polygon.io. Polygon IO is an API for market data."
+  spec.description   = "Client library for polygon.io's REST and Websocket API's. Polygon IO is an API for market data."
 
   spec.metadata = {
     "homepage_uri" => "https://github.com/lancecarlson/polygonio-rb",
